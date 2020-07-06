@@ -1,7 +1,7 @@
 #!/bin/bash
+#docker run -v [/carpeta_host:]/carpeta_en_contenedor   /shared-data:/shared-data
 docker run -d \
 	--name mattermost-dine \
-	--publish 8065:8065 \
-        --volume /dine/mattermost \
-        --volume /dine/mattermost-data \
+	--publish 8443:8065 \
+        --volume /home/vagrant/mattermost/config:/mm/config \
 	mattermost/mattermost-preview
